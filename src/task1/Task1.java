@@ -41,34 +41,36 @@ public class Task1 {
 
         while (str != null) {
             if (((str.startsWith("docnum") || str.startsWith("contract")) && !str.contains(" ") && !str.contains("_"))) {
-                writer.write(str);
+                writer.write(str + "\n");
                 System.out.println(str);
-            } else if (!str.startsWith("docnum")) {
-                try {
-                    writer2.write(str + "Don't start with \"docnum\" ");
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+            }else if (!str.startsWith("docnum")) {
+                    try {
+                        writer2.write(str + "Don't start with \"docnum\" \n");
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                } else if (!str.startsWith("contract")) {
+                    try {
+                        writer2.write(str + "Don't start with \"contract\" \n ");
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                } else if (str.contains(" ")) {
+                    try {
+                        writer2.write(str + "Contains \" \" \n");
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                } else if (str.contains("_")) {
+                    try {
+                        writer2.write(str + "Contains \"_\" \n");
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
-            } else if (!str.startsWith("contract")) {
-                try {
-                    writer2.write(str + "Don't start with \"contract\" ");
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            } else if (str.contains(" ")) {
-                try {
-                    writer2.write(str + "Contains \" \" ");
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            } else if (str.contains("_")) {
-                try {
-                    writer2.write(str + "Contains \"_\" ");
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
             str = reader.readLine();
         }
+        writer.close();
+        writer2.close();
     }
 }

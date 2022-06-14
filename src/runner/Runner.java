@@ -13,9 +13,7 @@ public class Runner {
         Task1 task1 = new Task1();
         try {
             task1.ReadFile();
-        } catch (DocNumExeption | ContractExeption e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (DocNumExeption | ContractExeption | IOException e) {
             throw new RuntimeException(e);
         }
     }
