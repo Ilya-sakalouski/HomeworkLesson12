@@ -45,25 +45,25 @@ public class Task1 {
                 System.out.println(str);
             }else if (!str.startsWith("docnum")) {
                     try {
-                        writer2.write(str + "Don't start with \"docnum\" \n");
+                        writer2.write(str + "  Don't start with \"docnum\" \n");
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
                 } else if (!str.startsWith("contract")) {
                     try {
-                        writer2.write(str + "Don't start with \"contract\" \n ");
+                        writer2.write(str + "  Don't start with \"contract\" \n ");
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
                 } else if (str.contains(" ")) {
                     try {
-                        writer2.write(str + "Contains \" \" \n");
+                        writer2.write(str + "  Contains \" \" \n");
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
                 } else if (str.contains("_")) {
                     try {
-                        writer2.write(str + "Contains \"_\" \n");
+                        writer2.write(str + "  Contains \"_\" \n");
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
